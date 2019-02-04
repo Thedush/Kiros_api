@@ -5,20 +5,19 @@ import requests
 url = 'https://api.kairos.com/enroll'
 
 values =  {
-    "subject_id": "Nayanthara",
-    "gallery_name": "check"
+    "subject_id": "Navaneeth",
+    "gallery_name": "check1"
   }
 
 
 headers = {
 
-    'app_id': '15d495c3',
-    'app_key': 'dbf71210732663c17ef0b6b365c41be5'
+    'app_id': '027a95d0',
+    'app_key': '3b5372ff123773c8abe788239ac462c8'
 }
-
-files = {'image': open('kolamaavu_coco_nayanthara.jpg', 'rb')}
-
-r = requests.post(url, data=values, headers=headers, files=files)
-
-
-print r.content
+# image = ['test3.jpeg']
+image = ['pp.jpeg','image1.jpg']
+for i in image:
+	files = {'image': open(i, 'rb')}
+	r = requests.post(url, data=values, headers=headers, files=files)
+	print r.content
